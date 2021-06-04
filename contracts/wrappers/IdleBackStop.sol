@@ -6,7 +6,6 @@
  * @author: Idle Labs Inc., idle.finance
  */
 pragma solidity 0.5.16;
-// pragma experimental ABIEncoderV2;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
@@ -98,6 +97,7 @@ contract IdleBackStop is ILendingProtocol, Ownable {
         require(_blocksPerYear != 0, "_blocksPerYear is 0");
         blocksPerYear = _blocksPerYear;
     }
+    // end onlyOwner
 
     /**
     * Throws if called by any account other than IdleToken contract.
