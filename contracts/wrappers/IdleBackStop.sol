@@ -12,9 +12,7 @@ import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
 import "@openzeppelin/contracts/token/ERC20/SafeERC20.sol";
 import "@openzeppelin/contracts/ownership/Ownable.sol";
 import "@openzeppelin/contracts/math/SafeMath.sol";
-// import "../interfaces/ILendingProtocol.sol";
 import "../interfaces/CERC20.sol";
-// import "hardhat/console.sol";
 
 // B.Protocol Token Interface
 interface IBErc20 {
@@ -54,8 +52,6 @@ contract IdleBackStop is ILendingProtocol, Ownable {
     address public idleToken;
     uint256 public blocksPerYear;
     bool public initialized;
-
-    // param _idleToken : idleToken address
 
     /**
     * @param _token : bTokenDAI address
@@ -189,7 +185,6 @@ contract IdleBackStop is ILendingProtocol, Ownable {
         if (balance == 0) {
             return bDAITokens;
         }
-        // console.log('balance mint: ', balance);
         IBErc20(bTokenDAI).mint(balance);
         bDAITokens = IERC20(bTokenDAI).balanceOf(address(this));
         IERC20(bTokenDAI).safeTransfer(msg.sender, bDAITokens); 
@@ -205,7 +200,6 @@ contract IdleBackStop is ILendingProtocol, Ownable {
     function redeem(address _account)
         external onlyIdle 
         returns (uint256 tokens) {
-        // console.log('IERC20(bTokenDAI).balanceOf(address(this)): ', IERC20(bTokenDAI).balanceOf(address(this)));
         IBErc20(bTokenDAI).redeem(IERC20(bTokenDAI).balanceOf(address(this)));
         IERC20 _underlying = IERC20(underlyingToken);
         tokens = _underlying.balanceOf(address(this));
