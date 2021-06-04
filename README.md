@@ -1,8 +1,10 @@
 # Idle contracts For Idle BackStop wrapper
-Live version: [https://idle.finance](https://idle.finance)
 
-### IdleBackStop.sol Link
+### IdleBackStop.sol Link  
+[https://github.com/sunnyRK/BProtocol-yielddapp/blob/master/contracts/wrappers/IdleBackStop.sol](https://github.com/sunnyRK/BProtocol-yielddapp/blob/master/contracts/wrappers/IdleBackStop.sol)
 
+### IdleBackStop.js Testcase Link  
+[https://github.com/sunnyRK/BProtocol-yielddapp/blob/master/test/idleBackStop.js](https://github.com/sunnyRK/BProtocol-yielddapp/blob/master/test/idleBackStop.js)
 
 ### Tests
 
@@ -20,13 +22,10 @@ Live version: [https://idle.finance](https://idle.finance)
 
     yarn
 
-To run tests first spin up a ganache-cli instance with unlimited contract size flag
-```
-ganache-cli --allowUnlimitedContractSize
-```
+3). To run tests first spin up a ganache-cli instance with unlimited contract size flag
 
-then
+    ganache-cli --allowUnlimitedContractSize
 
-```
-truffle test
-```
+4). test
+
+    truffle test
